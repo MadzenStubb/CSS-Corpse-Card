@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #181818;
+  color: #ededed;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: #9e4d4d23;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  box-shadow: #ce432023 0px -23px 25px 0px inset, #ce432067 0px -36px 30px 0px inset,
+    #ce432011 0px -79px 40px 0px inset, #ce43202d 0px 2px 1px, rgba(206, 67, 32, 0.082) 0px 4px 2px,
+    #ce43203f 0px 8px 4px, #ce432036 0px 16px 8px, #ce432044 0px 32px 16px;
+  transition: 1s;
+}
+
+.card .imgBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  background: #000;
+  transition: 1s;
+}
+
+.card:hover .imgBox {
+  transform: rotateY(-180deg);
+}
+
+.card:hover {
+  transform: translateX(50%);
+}
+
+.card .imgBox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.card .imgBox img:nth-child(2) {
+  transform: rotateY(180deg);
+}
+
+.card .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .details .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card .details .content h2 {
+  text-align: center;
+  font-weight: 700;
+  line-height: 1em;
+}
+
+.card .details .content h2 span {
+  color: #ce4420;
+  font-size: 0.8em;
+}
+
+.card .details .content .social-icons {
+  position: relative;
+  display: flex;
+  margin-top: 10px;
+}
+
+.card .details .content .social-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background: #810d0d59;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 5px;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+.card .details .content .social-icons a:hover {
+  background: #ce4420;
+}
